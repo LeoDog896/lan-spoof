@@ -31,8 +31,11 @@ await new Command()
 
     const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+    console.log(`Broadcasting forever with port ${port} and MOTD "${motd}"...`);
+    console.log(`Running from local IP: ${localIP}.`);
+    console.log("Press Ctrl+C to stop.\n")
+
     while (true) {
-      console.log("Sending packet")
       socket.send(packet, addr);
       await wait(1500);
     }
