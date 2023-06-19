@@ -1,7 +1,9 @@
+const localIP = Deno.networkInterfaces().filter(device => device.cidr.startsWith("192.168"))[0].address.split("/")[0];
+
 const addr: Deno.NetAddr = {
   transport: "udp",
   port: 4445,
-  hostname: "224.0.2.60",
+  hostname: localIP
 };
 
 const socket = Deno.listenDatagram({
@@ -20,6 +22,7 @@ function data(motd: string, port: number): Uint8Array {
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 while (true) {
+  console.log("Sending packet")
   socket.send(data("Hey!", 25565), addr);
-  await wait(1000);
+  await wait(1500);
 }
