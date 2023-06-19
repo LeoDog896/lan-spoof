@@ -7,3 +7,5 @@ Protocol based off of [wiki.vg - Ping via LAN](https://wiki.vg/Server_List_Ping#
 ```sh
 deno run --allow-net --allow-sys --unstable index.ts
 ```
+
+The CLI uses [cliffy](https://cliffy.io/), with `--port <port>` and `--motd <motd>` as optional arguments.
