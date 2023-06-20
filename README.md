@@ -10,6 +10,8 @@ Protocol based off of [wiki.vg - Ping via LAN](https://wiki.vg/Server_List_Ping#
 deno install -n lan-spoof -f --allow-net --allow-sys --unstable https://raw.githubusercontent.com/LeoDog896/lan-spoof/main/index.ts
 ```
 
+Then you can run `lan-spoof`.
+
 The CLI uses [cliffy](https://cliffy.io/), with `--port <port>` and `--motd <motd>` as optional arguments.
 
 ## Run Locally
